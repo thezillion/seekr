@@ -16,7 +16,7 @@
 
 String Data;
 
-const char* ssid = "SEEKR2";
+const char* ssid = "SEEKR1";
 const char* password = "12345678";
 
 IPAddress Ip(192, 168, 1, 1);
@@ -99,7 +99,7 @@ void setup() {
   }
 
   // server address, port and URL
-  webSocket.begin("192.168.1.1", 81, "/");
+  webSocket.begin("192.168.1.3", 81, "/");
 
   // event handler
   webSocket.onEvent(webSocketEvent);
@@ -137,7 +137,7 @@ void webSocketServerEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t 
            //USE_SERIAL.printf("[%u] get Text: %s\n", num, payload);
             Data=String(((char*)payload));
            // USB_SERIAL.print(num);
-            webSocket.sendTXT("Helloo");
+            webSocket.sendTXT(Data);
             webSocket.loop();
             USB_SERIAL.println(Data);
             // send message to client

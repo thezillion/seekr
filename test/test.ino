@@ -16,7 +16,7 @@
 
 String Data;
 
-const char* ssid = "SEEKR2";
+const char* ssid = "SEEKR1";
 const char* password = "12345678";
 
 IPAddress Ip(192, 168, 1, 1);
@@ -99,7 +99,7 @@ void setup() {
   }
 
   // server address, port and URL
-  webSocket.begin("192.168.1.1", 81, "/");
+  webSocket.begin("192.168.1.3", 81, "/");
 
   // event handler
   webSocket.onEvent(webSocketEvent);
