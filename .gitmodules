@@ -1,0 +1,3 @@
+[submodule "seekr-app"]
+	path = seekr-app
+	url = https://github.com/thezillion/seekr-app
